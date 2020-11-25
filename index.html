@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Sheet</title>
+</head>
+<body>
+    <fieldset>
+    <h1 align="center"style="font-family:cambria;font-size:40";><u>STUDENTS MARKSHEET</h1>
+
+    <center>
+    <form action="#" onsubmit="check()">
+        <input type="number" id="total" placeholder="Total Marks" required>
+        <input type="number" id="obtained" placeholder="Obtained Marks" required><br><br>
+        <button type="submit">Check Now</button>
+    </form>
+
+    <div class="resultt">
+        <h1>Result</h1>
+        <h1 id="result"></h1>
+    </div>
+</fieldset>
+</center>
+    
+    <script>
+        var TotalMarks = document.getElementById('total');
+var ObtainedMarks = document.getElementById('obtained');
+var result = document.getElementById('result');
+
+function check(){
+    var percentage = (ObtainedMarks.value / TotalMarks.value) * 100;
+    console.log(parseInt( percentage))
+    if(percentage >= 80 && percentage <= 100){
+        result.innerHTML = "Your Grade Is A+ " + percentage + "%";
+    }
+    else if(percentage >= 79 && percentage <= 70){
+        result.innerHTML = "Your Grade Is A " + percentage + "%";
+    }
+    else if(percentage >= 69 && percentage <= 60){
+        result.innerHTML = "Your Grade Is B " + percentage + "%";
+    }
+    else{
+        result.innerHTML = "You Are Fail";
+    }
+}
+    </script>    
+    
+</body>
+</html>
